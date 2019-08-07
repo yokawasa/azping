@@ -1,6 +1,4 @@
-# gcping
-
-[![Build Status](https://travis-ci.com/GoogleCloudPlatform/gcping.svg?branch=master)](https://travis-ci.com/GoogleCloudPlatform/gcping)
+# azping
 
 azping is a command line tools that reports median latency to
 Azure regions. It is fork of [gcping](https://github.com/GoogleCloudPlatform/gcping).
