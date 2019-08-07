@@ -2,15 +2,15 @@
 
 [![Build Status](https://travis-ci.com/GoogleCloudPlatform/gcping.svg?branch=master)](https://travis-ci.com/GoogleCloudPlatform/gcping)
 
-gcping is a command line tools that reports median latency to
-Google Cloud regions. It is inspired by [gcping.com](http://gcping.com).
+azping is a command line tools that reports median latency to
+Azure regions. It is fork of [gcping](https://github.com/GoogleCloudPlatform/gcping).
 
 ```
-gcping [options...]
+azping [options...]
 
 Options:
 -n   Number of requests to be made to each region.
-     By default 10; can't be negative.
+     By default 5; can't be negative.
 -c   Max number of requests to be made at any time.
      By default 10; can't be negative or zero.
 -t   Timeout. By default, no timeout.
@@ -19,44 +19,50 @@ Options:
 
 -csv CSV output; disables verbose output.
 -v   Verbose output.
-
-Need a website version? See gcping.com
 ```
 
 An example output:
 
 ```
-$ gcping
- 1.  [global]                   36.752191ms
- 2.  [us-east4]                 37.091976ms
- 3.  [northamerica-northeast1]  51.918669ms
- 4.  [us-central1]              75.488941ms
- 5.  [us-east1]                 75.928857ms
- 6.  [us-west2]                 148.998964ms
- 7.  [us-west1]                 157.899518ms
- 8.  [europe-west2]             166.42703ms
- 9.  [europe-west1]             174.226927ms
-10.  [europe-west4]             179.802812ms
-11.  [europe-west3]             195.430189ms
-12.  [europe-west6]             208.143331ms
-13.  [europe-north1]            252.823482ms
-14.  [southamerica-east1]       311.575344ms
-15.  [asia-northeast1]          338.151472ms
-16.  [asia-northeast2]          358.787403ms
-17.  [asia-east1]               394.165761ms
-18.  [asia-east2]               418.293092ms
-19.  [australia-southeast1]     425.679503ms
-20.  [asia-southeast1]          454.494659ms
-21.  [asia-south1]              573.022571ms
+$ azping
+
+ 1.  [japaneast]           44.76367ms
+ 2.  [japanwest]           51.818528ms
+ 3.  [koreacentral]        82.854564ms
+ 4.  [koreasouth]          106.661344ms
+ 5.  [eastasia]            161.402128ms
+ 6.  [southeastasia]       191.654551ms
+ 7.  [australiaeast]       239.64985ms
+ 8.  [westus2]             241.140593ms
+ 9.  [westus]              247.800051ms
+10.  [southindia]          260.301905ms
+11.  [australiacentral]    264.562011ms
+12.  [australiasoutheast]  294.994037ms
+13.  [centralus]           302.262868ms
+14.  [southcentralus]      304.422153ms
+15.  [centralindia]        306.603511ms
+16.  [westindia]           308.15552ms
+17.  [westcentralus]       320.195892ms
+18.  [uaenorth]            341.351333ms
+19.  [canadacentral]       344.130208ms
+20.  [canadaeast]          362.906659ms
+21.  [eastus2]             367.944441ms
+22.  [eastus]              385.297558ms
+23.  [northeurope]         487.650428ms
+24.  [uksouth]             504.534594ms
+25.  [francecentral]       518.567778ms
+26.  [ukwest]              521.46691ms
+27.  [westeurope]          563.110408ms
+28.  [brazilsouth]         563.938323ms
+29.  [northcentralus]      597.346426ms
+30.  [southafricanorth]    803.077525ms
 ```
 
 ## Installation
 
-* Linux 64-bit: https://storage.googleapis.com/gcping-release/gcping_linux_amd64
+* Linux 64-bit: https://azpingrelease.blob.core.windows.net/azping_linux_amd64
   ```
-  $ curl https://storage.googleapis.com/gcping-release/gcping_linux_amd64 > gcping && chmod +x gcping
+  $ curl https://azpingrelease.blob.core.windows.net/azping_linux_amd64 > azping && chmod +x azping
   ```
-* Mac 64-bit: https://storage.googleapis.com/gcping-release/gcping_darwin_amd64
-* Windows 64-bit: https://storage.googleapis.com/gcping-release/gcping_windows_amd64
-
-Note: This is not an official Google product.
+* Mac 64-bit: https://azpingrelease.blob.core.windows.net/azping_darwin_amd64
+* Windows 64-bit: https://azpingrelease.blob.core.windows.net/azping_windows_amd64

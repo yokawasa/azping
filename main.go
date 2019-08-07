@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Program gcping pings GCP regions and reports about the latency.
+// Program azping pings Azure regions and reports about the latency.
 package main
 
 import (
@@ -27,27 +27,36 @@ import (
 
 // TODO(jbd): Add more zones.
 var endpoints = map[string]string{
-	"global":                  "35.186.221.153",
-	"asia-east1":              "104.155.201.52",
-	"asia-east2":              "35.220.162.209",
-	"asia-northeast1":         "104.198.86.148",
-	"asia-northeast2":         "34.97.196.51",
-	"asia-south1":             "35.200.186.152",
-	"asia-southeast1":         "35.185.179.198",
-	"australia-southeast1":    "35.189.6.113",
-	"europe-north1":           "35.228.170.201",
-	"europe-west1":            "104.199.82.109",
-	"europe-west2":            "35.189.67.146",
-	"europe-west3":            "35.198.78.172",
-	"europe-west4":            "35.204.93.82",
-	"europe-west6":            "34.65.3.254",
-	"northamerica-northeast1": "35.203.57.164",
-	"southamerica-east1":      "35.198.10.68",
-	"us-central1":             "104.197.165.8",
-	"us-east1":                "104.196.161.21",
-	"us-east4":                "35.186.168.152",
-	"us-west1":                "104.199.116.74",
-	"us-west2":                "35.236.45.25",
+  "eastasia":             "azpingeastasia.blob.core.windows.net",
+  "southeastasia":        "azpingsoutheastasia.blob.core.windows.net",
+  "centralus":            "azpingcentralus.blob.core.windows.net",
+  "eastus":               "azpingeastus.blob.core.windows.net",
+  "eastus2":              "azpingeastus2.blob.core.windows.net",
+  "westus":               "azpingwestus.blob.core.windows.net",
+  "northcentralus":       "azpingnorthcentralus.blob.core.windows.net",
+  "southcentralus":       "azpingsouthcentralus.blob.core.windows.net",
+  "northeurope":          "azpingnortheurope.blob.core.windows.net",
+  "westeurope":           "azpingwesteurope.blob.core.windows.net",
+  "japanwest":            "azpingjapanwest.blob.core.windows.net",
+  "japaneast":            "azpingjapaneast.blob.core.windows.net",
+  "brazilsouth":          "azpingbrazilsouth.blob.core.windows.net",
+  "australiaeast":        "azpingaustraliaeast.blob.core.windows.net",
+  "australiasoutheast":   "azpingaustraliasoutheast.blob.core.windows.net",
+  "southindia":           "azpingsouthindia.blob.core.windows.net",
+  "centralindia":         "azpingcentralindia.blob.core.windows.net",
+  "westindia":            "azpingwestindia.blob.core.windows.net",
+  "canadacentral":        "azpingcanadacentral.blob.core.windows.net",
+  "canadaeast":           "azpingcanadaeast.blob.core.windows.net",
+  "uksouth":              "azpinguksouth.blob.core.windows.net",
+  "ukwest":               "azpingukwest.blob.core.windows.net",
+  "westcentralus":        "azpingwestcentralus.blob.core.windows.net",
+  "westus2":              "azpingwestus2.blob.core.windows.net",
+  "koreacentral":         "azpingkoreacentral.blob.core.windows.net",
+  "koreasouth":           "azpingkoreasouth.blob.core.windows.net",
+  "francecentral":        "azpingfrancecentral.blob.core.windows.net",
+  "australiacentral":     "azpingaustraliacentral.blob.core.windows.net",
+  "uaenorth":             "azpinguaenorth.blob.core.windows.net",
+  "southafricanorth":     "azpingsouthafricanorth.blob.core.windows.net",
 }
 
 var (
@@ -66,7 +75,8 @@ var (
 
 func main() {
 	flag.BoolVar(&top, "top", false, "")
-	flag.IntVar(&number, "n", 10, "")
+	//flag.IntVar(&number, "n", 10, "")
+	flag.IntVar(&number, "n", 5, "")
 	flag.IntVar(&concurrency, "c", 10, "")
 	flag.DurationVar(&timeout, "t", time.Duration(0), "")
 	flag.BoolVar(&verbose, "v", false, "")
@@ -156,11 +166,11 @@ func usage() {
 	os.Exit(0)
 }
 
-var usageText = `gcping [options...]
+var usageText = `azping [options...]
 
 Options:
 -n   Number of requests to be made to each region.
-     By default 10; can't be negative.
+     By default 5; can't be negative.
 -c   Max number of requests to be made at any time.
      By default 10; can't be negative or zero.
 -t   Timeout. By default, no timeout.
@@ -169,6 +179,4 @@ Options:
 
 -csv CSV output; disables verbose output.
 -v   Verbose output.
-
-Need a website version? See gcping.com
 `

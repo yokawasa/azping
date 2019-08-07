@@ -1,3 +1,3 @@
-module github.com/rakyll/gcping
+module github.com/yokawasa/azping
 
 go 1.13
