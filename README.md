@@ -1,7 +1,7 @@
 # azping
 
 azping is a command line tools that reports median latency to
-Azure regions. It is fork of [gcping](https://github.com/GoogleCloudPlatform/gcping).
+Azure regions. It is a fork of [gcping](https://github.com/GoogleCloudPlatform/gcping).
 
 ```
 azping [options...]
@@ -64,3 +64,17 @@ $ azping
   ```
 * Mac 64-bit: https://azpingrelease.blob.core.windows.net/azping_darwin_amd64
 * Windows 64-bit: https://azpingrelease.blob.core.windows.net/azping_windows_amd64
+
+Or, you can always build the binary from the source code like this:
+
+```
+$ git clone https://github.com/yokawasa/azping.git
+$ cd azping
+$ make
+$ tree bin
+
+bin
+├── azping_darwin_amd64
+├── azping_linux_amd64
+└── azping_windows_amd64
+```
