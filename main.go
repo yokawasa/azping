@@ -25,7 +25,7 @@ import (
 	"time"
 )
 
-// TODO(jbd): Add more zones.
+// TODO Add more regions
 var endpoints = map[string]string{
   "eastasia":             "azpingeastasia.blob.core.windows.net",
   "southeastasia":        "azpingsoutheastasia.blob.core.windows.net",
