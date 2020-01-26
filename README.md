@@ -1,5 +1,7 @@
 # azping
 
+[![GitHub Actions](https://github.com/yokawasa/azping/workflows/Upload%20Release%20Asset/badge.svg)](https://github.com/yokawasa/azping/actions)
+
 azping is a command line tools that reports median latency to
 Azure regions. It is a fork of [gcping](https://github.com/GoogleCloudPlatform/gcping).
 
@@ -58,12 +60,19 @@ $ azping
 
 ## Installation
 
-* Linux 64-bit: https://azpingrelease.blob.core.windows.net/azping_linux_amd64
-  ```
-  $ curl https://azpingrelease.blob.core.windows.net/azping_linux_amd64 > azping && chmod +x azping
-  ```
-* Mac 64-bit: https://azpingrelease.blob.core.windows.net/azping_darwin_amd64
-* Windows 64-bit: https://azpingrelease.blob.core.windows.net/azping_windows_amd64
+Download right binary (ie, your OS & Arch ) from release URL
+- https://github.com/yokawasa/azping/releases
+
+```sh
+# Linux 64-bit: Download azping_linux_amd64.zip
+mv azping_linux_amd64 azping && chmod +x azping
+
+# Mac 64-bit: Download azping_darwin_amd64.zip
+mv azping_darwin_amd64 azping && chmod +x azping
+
+# Windows 64-bit: Download azping_windows_amd64.zip
+mv azping_windows_amd64 azping && chmod +x azping
+```
 
 Or, you can always build the binary from the source code like this:
 
