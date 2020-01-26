@@ -138,3 +138,15 @@ Norway West           58.969975   5.733107     norwaywest
 Norway East           59.913868   10.752245    norwayeast
 ```
 
+## GitHub Actions Release Workflow
+
+By your pushing tag, GitHub trigger the GitHub Actions Release workflow where
+- The project is checkout and build in multi-SO & Architecture
+- Release each artifact to release URL in the repository
+
+This is how you trigger the workflow
+```
+git tag -a v0.0.1 -m "Version azping-v0.0.1"
+git push --tags
+```
+
